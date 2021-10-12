@@ -23,15 +23,13 @@ const filterElems = function (e) {
             refs.countryList.innerHTML = '';
             if (countries.length === 1) {
                 refs.countryInfo.innerHTML = `
-            <ul class="list-group">
-                <li class="list-group-item col-4"><img src ="${countries[0].flags.svg}"></li>
-                <li class="list-group-item list-group-item-primary  col-4">${countries[0].name}</li>
-                <li class="list-group-item col-4">${countries[0].capital}</li>
-                <li class="list-group-item col-4">${countries[0].languages
+                <li class="list-item col-4"><img src ="${countries[0].flags}"></li>
+                <li class="list-item list-item-primary  col-4">${countries[0].name}</li>
+                <li class="list-item col-4">${countries[0].capital}</li>
+                <li class="list-item col-4">${countries[0].languages
                         .map(lang => lang.name)
                         .join(', ')}</li>
-                <li  class="list-group-item  col-4">${countries[0].population}</li>
-            </ul>
+                <li  class="list-item col-4">${countries[0].population}</li>
             `;
                 refs.img.classList.add('img-thumbnail');
             } else if (countries.length >= 1 && countries.length <= 10) {
@@ -44,7 +42,7 @@ const filterElems = function (e) {
                     height: 200px; 
                     background-size:cover; 
                     background-position:center; 
-                    background-image: url(${country.flags.svg}); 
+                    background-image: url(${country.flags}); 
                     display:block" 
                 </span>
                 <mark>${country.name}<mark>
