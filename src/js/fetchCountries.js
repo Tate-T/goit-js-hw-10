@@ -4,7 +4,7 @@ import Notiflix from 'notiflix';
 export const fetchCountries = (inputData) => {
     return fetch(`${baseUrl}${inputData}?fields=name,capital,population,flag,languages`)
         .then(response => {
-            if (!(response.status >= 200) && !(response.status < 300)) {
+            if (!response.ok) {
                 throw new Error(response.status);
             }
             return response.json();
